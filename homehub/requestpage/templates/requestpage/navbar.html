@@ -1,0 +1,19 @@
+{% load static %}
+
+
+<style>
+  .hello-msg{
+    font-size: 18px;
+    color: black;
+  }
+</style>
+
+<nav style= "display: flex;justify-content: space-between;", class="navbar navbar-expand-lg navbar-dark bg-dark">
+ <img src="{% static 'images/Homzhub_logo.png' %}" width="150" height="50">
+  <div class="collapse navbar-collapse" id="navbarNav">
+    <ul class="navbar-nav">
+    </ul>
+  </div>
+  <span ><a  class="hello-msg" href="{% url 'logout' %}">Logout</a></span>
+</nav>
+<hr>

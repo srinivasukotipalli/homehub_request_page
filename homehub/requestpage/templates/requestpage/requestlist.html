@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html>
+<head>
+<style>
+body {
+    padding: 20px;
+}
+.header {
+    text-align: center;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #6986A4;
+  text-align: left;
+  padding: 16px;
+}
+
+tr:nth-child(even) {
+  background-color: #a6c5d9;
+}
+.button {
+  background-color: #7a7ac1;
+  border: none;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+}
+
+</style>
+</head>
+
+<body>
+{%  include 'requestpage/navbar.html' %}
+
+<h2 class="header">Request List</h2>
+
+<div style="border: 2px solid #8294b8; padding: 20px;">
+
+<table>
+  <tr style="background-color: #6d6da5; color: white">
+    <th>Request Id</th>
+    <th>Request Type</th>
+    <th>Request Desc</th>
+    <th>Status</th>
+  </tr>
+
+ {% for i in requests %}
+  <tr>
+    <td>{{i.id}}</td>
+    <td>{{i.request_type}}</td>
+    <td>{{i.request_desc}}</td>
+	<td>{{i.status}}</td>
+  </tr>
+{% endfor %}
+
+</table>
+
+<h2 class="header">
+    <button class="button" type="submit" value="" onclick="location.href='{% url 'newrequestpage' %}'" name='mybtn2'>New Request</button>
+</h2>
+</div>
+</body>
+</html>
+
+
+
+
